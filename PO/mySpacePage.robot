@@ -18,3 +18,12 @@ Validate the countrycode with no is present in MySpace
    Page Should Contain Element      ${profile_tray_Element}
    Page Should Contain     91
    Page Should Contain     Profile
+
+
+
+Select MySpace & tap LogOut button
+    Run Keyword until Succeed   Click Element  ${mySpace_tray_Element}
+    Run Keyword until Succeed   Click Element  ${helepSettingbtn_Element}
+    Run Keyword until Succeed   Click Element   ${logOutbtn_Element}
+    Wait Until element located on Page      ${logOutbtn_popUp_Element}
+    Run Keyword until Succeed   Click Element  ${logOutbtn_popUp_Element}  # select the logout option from the popup box

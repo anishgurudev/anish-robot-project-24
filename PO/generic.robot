@@ -22,6 +22,7 @@ Run Keyword until Succeed
     Wait Until Keyword Succeeds     5s  1s  ${keyword}  @{KeywordArgument}
 
 Wait Until element located on Page
+    [Arguments]     ${Element}
     Wait Until Element Is Visible        ${Element}
 
 Close Browser session
