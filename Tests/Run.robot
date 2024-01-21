@@ -9,6 +9,7 @@ Library           SeleniumLibrary
 Library           Collections
 
 
+
 *** Variables ***
 ${url} =    https://pp5.hotstar.com/
 ${browser} =    chrome
@@ -48,17 +49,19 @@ ${playerBackwardIcon}=      .icon-back-line
 Validate Succesful Login
    Open the browser with the Url
    Login into the hotstar
-#  Validate the countrycode with no is present in MySpace
-#  Close Browser session
+   Validate the countrycode with no is present in MySpace
+#   Select MySpace & tap LogOut button
+   Close Browser session
 
-#Validate plability of Content
- #  Open the browser with the Url
-#   Login into the hotstar
-#    Select Search Tab
- #   Enter the content & search
- #   validate the content title
-#    Pause the player & Forward the content
-#   Close Browser session
+#   Validate plability of Content
+#  Open the browser with the Url
+#  Login into the hotstar
+#  Select Search Tab
+#  Enter the content & search
+#  validate the content title
+#  Select MySpace & tap LogOut button
+#   Pause the player & Forward the content   # - not implemented
+#  Close Browser session
 
 *** Keywords ***
 Open the browser with the Url
@@ -139,15 +142,6 @@ Pause the player & Forward the content
      Run Keyword until Succeed   Click Element  ${SBpausebtn}
      sleep   2s
      Run Keyword until Succeed   Click Element  ${playerBackbtn}
-
-
-
-
-
-
-
-
-
 
 Run Keyword until Succeed
     [Arguments]     ${keyword}  @{KeywordArgument}
