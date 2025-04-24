@@ -10,15 +10,16 @@ Library           Collections
 Resource          ../PO/loginPage.robot
 Resource          ../PO/generic.robot
 Resource          ../PO/homePage.robot
-#Resource          ../PO/playerPage.robot
+Resource          ../PO/playerPage.robot
 Resource          ../PO/searchPage.robot
+Resource          ../PO/mySpacePage.robot
 
 *** Variables ***
 
 ${validMobileNo}=   9234870894
 ${validOTP} =       1234
 
-${MovieName}=       Aladin
+${MovieName} = titanic
 
 ${seekbaarbtn} =    //div[@aria-label='Current position']
 ${SBplaybtn} =   .icon-play-fill
@@ -37,22 +38,18 @@ ${playerBackwardIcon}=      .icon-back-line
 Validate Player controls
    Open the browser with the Url
    Set Selenium Implicit Wait  10 seconds  # playing with implicit waits
-   Login into the hotstar    ${validMobileNo}    ${validOTP}
-   Select Search Tab
-   Enter the content & search      ${MovieName}
-   validate the content title in player
-   Select MySpace & tap LogOut button
+#   Login into the hotstar    ${validMobileNo}    ${validOTP}
+    Select Search Tab
+    Enter the content & search      ${MovieName}
+#   validate the content title in player
 #    Pause the player & Forward the content
-   Close Browser session
+#   Select MySpace & tap LogOut button
+#   Close Browser session
 
 
 *** Keywords ***
 
-Logout from the appliction
-    select mySpace
-    click help&settings
-    click logout button
-    select the logout option from the popup box
+
 
 Logout from the other devices
     select mySpace

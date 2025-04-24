@@ -15,12 +15,14 @@ Variables          ../Locators/searchPage.py
 
 Enter the content & search
    [arguments]     ${Movie_Name}
+    sleep   3
+    Mouse Over      ${searchbarTxtbox}
     Wait Until Element Is Visible  ${searchbarTxtbox}
     Mouse Over      ${searchbarTxtbox}
     Click Element   ${searchbarTxtbox}
     Input Text      ${searchbarTxtbox}     ${Movie_Name}
     Wait Until Element Is Visible       //*[.='${Movie_Name}']
-#    Wait Until Element Is Visible   ${watchNowbtn}
+    Wait Until Element Is Visible   ${watchNowbtn}
     Click Element    ${watchNowbtn}
 
 
